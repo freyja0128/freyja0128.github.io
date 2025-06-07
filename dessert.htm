@@ -167,7 +167,7 @@
     </div>
   </section>
 
-    <section id="favorites" class="section">
+    <section id="bread" class="section">
     <h2>麵包類</h2>
     <div class="gallery">
       <img src="6.jpg" alt="最愛1"> 
@@ -187,20 +187,33 @@
 
   <!-- 切換分類的 JS -->
   <script>
-    const links = document.querySelectorAll('.nav-link');
-    const sections = document.querySelectorAll('.section');
+  const links = document.querySelectorAll('.nav-link');
+  const sections = document.querySelectorAll('.section');
 
-    links.forEach(link => {
-      link.addEventListener('click', () => {
-        links.forEach(l => l.classList.remove('active'));
-        sections.forEach(sec => sec.classList.remove('active'));
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      links.forEach(l => l.classList.remove('active'));
+      sections.forEach(sec => sec.classList.remove('active'));
 
-        link.classList.add('active');
-        const target = link.getAttribute('data-target');
-        document.getElementById(target).classList.add('active');
-      });
+      link.classList.add('active');
+      const target = link.getAttribute('data-target');
+      document.getElementById(target).classList.add('active');
     });
-  </script>
+  });
+
+  // ✅ 封面輪播背景
+  const hero = document.querySelector('.hero');
+  const images = [
+    "32.jpg",     // ✅ 換成你的圖片檔名
+    "25.jpg", // ✅ 換成你的圖片檔名
+    "20.jpg"  // ✅ 可以再加更多圖
+  ];
+
+  let index = 0;
+  setInterval(() => {
+    index = (index + 1) % images.length;
+    hero.style.backgroundImage = `url('${images[index]}')`;
+  }, 4000); // 
 </body>
 </html>
 
