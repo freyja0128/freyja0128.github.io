@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -8,54 +8,84 @@
     body, html {
       margin: 0;
       padding: 0;
-      font-family: sans-serif;
-      background: #000;
-      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
     }
 
-    .hero {
-      background: url('32.jpg') no-repeat center center/cover; 
-      min-height: 100vh;
-      padding: 60px;
-      position: relative;
-    }
-
+    
     nav {
-      position: fixed;
-      top: 20px;
-      right: 40px;
+      background: #fff;
+      color: #000;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
-    .nav-links {
+    nav .nav-link {
+      cursor: pointer;
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+      padding: 8px 12px;
+    }
+
+    nav .nav-link.active {
+      border-bottom: 2px solid black;
+    }
+
+    
+    .hero {
+      background: url("32.jpg") no-repeat center center/cover; 
+      height: 100vh;
       display: flex;
-      list-style: none;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      color: white;
+      text-align: center;
+    }
+
+    .hero h1 {
+      background-color: rgba(0,0,0,0.5);
+      padding: 30px;
+      border-radius: 10px;
+      font-size: 3em;
+    }
+
+   
+    .contact-icons {
+      position: absolute;
+      left: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
       gap: 20px;
     }
 
-    .nav-link {
-      cursor: pointer;
-      padding: 8px 12px;
+    .contact-icons a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      color: black;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-weight: bold;
       text-decoration: none;
-      color: white;
     }
 
-    .nav-link.active {
-      border-bottom: 2px solid white;
-    }
-
-    .content-area {
-      margin-top: 120px;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
+    /* 內容區域 */
     .section {
       display: none;
-      padding: 20px;
-      background-color: rgba(0,0,0,0.6);
-      border-radius: 10px;
-      margin-bottom: 20px;
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
     }
 
     .section.active {
@@ -65,63 +95,103 @@
     .gallery {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 15px;
+      justify-content: center;
     }
 
     .gallery img {
-      width: 200px;
-      border-radius: 8px;
+      width: 220px;
+      border-radius: 10px;
+    }
+
+    /* 響應式 */
+    @media screen and (max-width: 600px) {
+      .hero h1 {
+        font-size: 1.8em;
+      }
+
+      .gallery img {
+        width: 100%;
+      }
+
+      .contact-icons {
+        left: 10px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="hero">
-    <nav>
-      <ul class="nav-links">
-        <li><a class="nav-link active" data-target="home">蛋糕類</a></li>
-        <li><a class="nav-link" data-target="about">餅乾類</a></li>
-        <li><a class="nav-link" data-target="portfolio">PORTFOLIO</a></li>
-        <li><a class="nav-link" data-target="contact">CONTACT</a></li>
-        <li><a class="nav-link" data-target="albums">CLIENT ALBUMS</a></li>
-      </ul>
-    </nav>
 
-    <div class="content-area">
-      
-      <section id="home" class="section active">
-        <h1>茵為愛吃甜</h1> 
-        <p>手作甜點・用心製作</p> 
-      </section>
-
-      
-      <section id="about" class="section">
-        <h2>關於我</h2>
-        <p>感謝10年前的那個午後，如對接信號般的，決定嘗試親自闖闖烘焙這條路...</p> 
-      </section>
-
-      
-      <section id="contact" class="section">
-        <h2>聯絡我</h2>
-        <p>Email: [freyja@example.com]</p>
-        <p>Instagram: @[freyja0128]</p>
-      </section>
-
-     
-      <section id="albums" class="section">
-        <h2>訂購記錄</h2>
-        <ul>
-          <li>小美生日派對 - 客製蛋糕</li> 
-          <li>婚禮甜點桌 - 法式甜點組合</li>
-        </ul>
-      </section>
+  <!-- 封面區 -->
+  <section class="hero">
+    <div class="contact-icons">
+      <a href="mailto:[fteyja@example.com]">E</a> 
+      <a href="https://instagram.com/[freyja0128]" target="_blank">IG</a> 
     </div>
-  </div>
+    <h1>茵為愛吃甜</h1> 
+  </section>
 
+  <!-- 導覽列 -->
+  <nav>
+    <a class="nav-link active" data-target="cakes">蛋糕類</a>
+    <a class="nav-link" data-target="cookies">餅乾類</a>
+    <a class="nav-link" data-target="mousse">慕斯類</a>
+    <a class="nav-link" data-target="bread">麵包類</a>
+    <a class="nav-link" data-target="hot">食指大動</a>
+  </nav>
+
+  <!-- 各類別區塊 -->
+  <section id="cakes" class="section active">
+    <h2>蛋糕類</h2>
+    <div class="gallery">
+      <img src="4.jpg" alt="蛋糕1">
+      <img src="8.jpg" alt="蛋糕2">
+    </div>
+  </section>
+
+  <section id="cookies" class="section">
+    <h2>餅乾類</h2>
+    <div class="gallery">
+      <img src="14.jpg" alt="餅乾1"> 
+      <img src="16.jpg" alt="餅乾2">
+    </div>
+  </section>
+
+  <section id="mousse" class="section">
+    <h2>慕斯類</h2>
+    <div class="gallery">
+      <img src="2.jpg" alt="慕斯1">
+      <img src="17.jpg" alt="慕斯2">
+    </div>
+  </section>
+
+    <section id="favorites" class="section">
+    <h2>麵包類</h2>
+    <div class="gallery">
+      <img src="6.jpg" alt="最愛1"> 
+      <img src="23.jpg" alt="最愛2">
+    </div>
+  </section>
+  
+  <section id="hot" class="section">
+    <h2>食指大動</h2>
+    <div class="gallery">
+      <img src="30.jpg" alt="好吃1"> 
+      <img src="31.jpg" alt="好吃2">
+    </div>
+  </section>
+
+
+
+  <!-- 切換分類的 JS -->
   <script>
-    document.querySelectorAll('.nav-link').forEach(link => {
+    const links = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('.section');
+
+    links.forEach(link => {
       link.addEventListener('click', () => {
-        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-        document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+        links.forEach(l => l.classList.remove('active'));
+        sections.forEach(sec => sec.classList.remove('active'));
 
         link.classList.add('active');
         const target = link.getAttribute('data-target');
@@ -131,6 +201,7 @@
   </script>
 </body>
 </html>
+
 
 
 
