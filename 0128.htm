@@ -1,7 +1,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>甜點製作集</title>
+  <title>茵為愛吃甜!</title>
   <meta name="description" content="以下都是我自己做的甜點>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -105,3 +105,121 @@
 <figure>
   <img src="31.jpg" width="336" height="280">
 </figure>
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>甜絲絲</title>
+  <meta name="description"感謝10年前的那個午後，如對接信號般的，決定嘗試親自闖闖烘焙這條路。">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    header {
+      background-color: #ff6f61;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    .accordion {
+      background-color: #f1f1f1;
+      color: #444;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      text-align: left;
+      border: none;
+      outline: none;
+      transition: 0.4s;
+      font-size: 18px;
+    }
+    .active, .accordion:hover {
+      background-color: #ddd;
+    }
+    .panel {
+      padding: 0 18px;
+      background-color: white;
+      display: none;
+      overflow: hidden;
+    }
+    .panel img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>我的甜點作品集</h1>
+  <p>探索我精心製作的各式甜點</p>
+</header>
+
+<button class="accordion">🍰 蛋糕類</button>
+<div class="panel">
+  <img src="cake1.jpg" alt="草莓奶油蛋糕">
+  <p>草莓奶油蛋糕 - 新鮮草莓與濃郁奶油的完美結合。</p>
+  <img src="cake2.jpg" alt="巧克力慕斯蛋糕">
+  <p>巧克力慕斯蛋糕 - 香濃巧克力與絲滑慕斯的絕妙搭配。</p>
+</div>
+
+<button class="accordion">🍪 食指大動類</button>
+<div class="panel">
+  <img src="29.jpg" alt="史奴比">
+  <p>經典巧克力餅乾 - 外脆內軟，巧克力香氣四溢。</p>
+  <img src="31.jpg" alt="四喜餃子">
+  <p>抹茶餅乾 - 清新的抹茶味，帶來不同的口感體驗。</p>
+</div>
+
+<button class="accordion">🍩 油炸甜點</button>
+<div class="panel">
+  <img src="donut1.jpg" alt="原味甜甜圈">
+  <p>原味甜甜圈 - 經典原味，外酥內軟。</p>
+  <img src="donut2.jpg" alt="巧克力甜甜圈">
+  <p>巧克力甜甜圈 - 香濃巧克力包覆，甜而不膩。</p>
+</div>
+
+<button class="accordion">🎂慕斯類</button>
+<div class="panel">
+  <img src="2.jpg" alt="芒果流心慕斯">
+  <p>焦糖布丁 - 香滑的布丁搭配焦糖醬，口感豐富。</p>
+  <img src="7.jpg" alt="芒芒百香堤拉米斯">
+  <p>芒果慕斯 - 清新的芒果味，帶來夏日的感覺。</p>
+</div>
+
+<footer>
+  <p>© 2025 我的甜點作品集 | 聯絡方式：your.email@example.com</p>
+</footer>
+
+<script>
+  var acc = document.getElementsByClassName("accordion");
+  for (var i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "block";
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
