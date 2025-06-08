@@ -17,6 +17,7 @@
       background: url("21.jpg") no-repeat center center/cover;
       height: 100vh;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       position: relative;
@@ -25,10 +26,15 @@
     }
 
     .hero h1 {
-      background-color: rgba(0,0,0,0.5);
       padding: 30px;
-      border-radius: 10px;
       font-size: 3em;
+      background: none;
+    }
+
+    .hero p {
+      margin-top: -20px;
+      font-size: calc(3em - 5px);
+      max-width: 80%;
     }
 
     .contact-icons {
@@ -147,6 +153,7 @@
     <a class="nav-link" data-target="hot">食指大動</a>
   </nav>
   <h1>茵為愛吃甜</h1>
+  <p>感謝10年前的那個午後，如對接信號般的，決定嘗試親自闖闖烘焙這條路...</p>
 </section>
 
 <section id="cakes" class="section active" data-images="4.jpg,8.jpg,14.jpg,22.jpg">
