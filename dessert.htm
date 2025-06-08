@@ -11,10 +11,13 @@
       font-family: 'Segoe UI', sans-serif;
       background: #000;
       color: white;
+      height: 100%;
     }
 
     .hero {
-      background: url("21.jpg") no-repeat center center/cover;
+      background: url("21.jpg") no-repeat center center;
+      background-size: cover;
+      width: 100vw;
       height: 100vh;
       display: flex;
       flex-direction: column;
@@ -23,20 +26,20 @@
       position: relative;
       color: white;
       text-align: center;
+      overflow: hidden;
     }
 
-  .hero h1 {
-  padding: 30px;
-  font-size: 3em; /* 即 48px */
-  background: none;
-}
+    .hero h1 {
+      padding: 30px;
+      font-size: 3em;
+      background: none;
+    }
 
-.hero p {
-  margin-top: 0;
-  font-size: 28px; /* 小 20px */
-  max-width: 80%;
-}
-
+    .hero p {
+      margin-top: 0px;
+      font-size: 28px;
+      max-width: 80%;
+    }
 
     .contact-icons {
       position: absolute;
@@ -250,6 +253,7 @@
 
 </body>
 </html>
+
 
 
 
