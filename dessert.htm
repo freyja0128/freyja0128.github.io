@@ -124,6 +124,12 @@
     .gallery img {
       width: 220px;
       border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
     }
 
     .desc-link {
@@ -166,9 +172,33 @@
       height: 40px;
       cursor: pointer;
     }
+
+    /* 放大圖片遮罩 */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.8);
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 10px;
+    }
   </style>
 </head>
 <body>
+
+<div class="lightbox" id="lightbox">
+  <img id="lightbox-img" src="" alt="放大圖">
+</div>
 
 <section class="hero">
   <div class="contact-icons">
@@ -186,7 +216,7 @@
   <p>感謝10年前的那個午後，如對接信號般的，決定嘗試親自闖闖烘焙這條路...</p>
 </section>
 
-<!-- 範例 section：蛋糕類 -->
+<!-- 各分類 section 結構 -->
 <section id="cakes" class="section active"
   data-images='["2.jpg","4.jpg","7.jpg","8.jpg","10.jpg","13.jpg","17.jpg","18.jpg","19.jpg","20.jpg","21.jpg","22.jpg"]'
   data-descs='["蛋糕 1 描述","蛋糕 2 描述","蛋糕 3 描述","蛋糕 4 描述","蛋糕 5 描述","蛋糕 6 描述","蛋糕 7 描述","蛋糕 8 描述","蛋糕 9 描述","蛋糕 10 描述","蛋糕 11 描述","蛋糕 12 描述"]'>
@@ -199,7 +229,6 @@
   </div>
 </section>
 
-<!-- 你可以依樣畫葫蘆繼續新增其他 section -->
 <section id="cookies" class="section"
   data-images='["14.jpg","15.jpg","16.jpg"]'
   data-descs='["餅乾 1 描述","餅乾 2 描述","餅乾 3 描述"]'>
@@ -266,7 +295,7 @@
     });
   });
 
-  document.querySelectorAll('.section').forEach(section => {
+  sections.forEach(section => {
     const id = section.id;
     currentIndex[id] = 0;
     renderImages(section, 0);
@@ -298,19 +327,31 @@
     pageImages.forEach((src, i) => {
       const wrapper = document.createElement('div');
       wrapper.classList.add('gallery-item');
+
       const img = document.createElement('img');
       img.src = src;
+      img.addEventListener('click', () => {
+        document.getElementById('lightbox-img').src = src;
+        document.getElementById('lightbox').style.display = 'flex';
+      });
+
       const descLink = document.createElement('div');
       descLink.textContent = '點我';
       descLink.classList.add('desc-link');
       descLink.addEventListener('click', () => {
         descBox.innerHTML = `<p>${pageDescs[i]}</p>`;
       });
+
       wrapper.appendChild(img);
       wrapper.appendChild(descLink);
       gallery.appendChild(wrapper);
     });
   }
+
+  // 點擊遮罩關閉放大圖
+  document.getElementById('lightbox').addEventListener('click', () => {
+    document.getElementById('lightbox').style.display = 'none';
+  });
 </script>
 
 </body>
