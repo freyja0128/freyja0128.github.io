@@ -153,7 +153,7 @@
     </div>
   </section>
 
-  <section id="cookies" class="section active">
+  <section id="cookies" class="section">
     <h2>餅乾類</h2>
     <div class="gallery">
       <img src="14.jpg" alt="餅乾1"> 
@@ -161,7 +161,7 @@
     </div>
   </section>
 
-  <section id="mousse" class="section active">
+  <section id="mousse" class="section">
     <h2>慕斯類</h2>
     <div class="gallery">
       <img src="2.jpg" alt="慕斯1">
@@ -169,7 +169,7 @@
     </div>
   </section>
 
-    <section id="bread" class="section active">
+    <section id="bread" class="section">
     <h2>麵包類</h2>
     <div class="gallery">
       <img src="6.jpg" alt="最愛1"> 
@@ -177,7 +177,7 @@
     </div>
   </section>
   
-  <section id="hot" class="section active">
+  <section id="hot" class="section">
     <h2>食指大動</h2>
     <div class="gallery">
       <img src="30.jpg" alt="好吃1"> 
@@ -203,19 +203,18 @@
     });
   });
 
-  // ✅ 封面輪播背景
-  const hero = document.querySelector('.hero');
-  const images = [
-    "21.jpg",     // ✅ 換成你的圖片檔名
-    "25.jpg", // ✅ 換成你的圖片檔名
-    "20.jpg"  // ✅ 可以再加更多圖
-  ];
+ const hero = document.querySelector('.hero');
+const images = [
+  "21.jpg",
+  "25.jpg",
+  "20.jpg"
+];
 
-  let index = 0;
-  setInterval(() => {
-    index = (index + 1) % images.length;
-    hero.style.backgroundImage = `url('${images}')`;
-  }, 4000); // 
+let index = 0;
+setInterval(() => {
+  index = (index + 1) % images.length;
+  hero.style.backgroundImage = `url('${images[index]}')`;
+}, 4000);
 </body>
 </html>
 
