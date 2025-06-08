@@ -67,7 +67,7 @@
     nav {
       position: absolute;
       top: 20px;
-      right: calc(30px + 3cm); /* 從原本的 right: 30px 改為向左移動3公分 */
+      left: 30px; /* ← 從右側移到左側，往左移動 */
       z-index: 10;
       display: flex;
       gap: 15px;
@@ -118,9 +118,37 @@
       flex-wrap: wrap;
     }
 
+    .gallery-item {
+      text-align: center;
+    }
+
     .gallery img {
       width: 220px;
       border-radius: 10px;
+    }
+
+    .desc-link {
+      display: inline-block;
+      margin-top: 10px;
+      color: #fff;
+      text-decoration: underline;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .desc-link:hover {
+      color: #ffcc00;
+    }
+
+    .description-box {
+      margin-top: 20px;
+      font-size: 18px;
+      max-width: 600px;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+      transition: all 0.3s ease;
     }
 
     .pagination {
@@ -160,57 +188,93 @@
   <p>感謝10年前的那個午後，如對接信號般的，決定嘗試親自闖闖烘焙這條路...</p>
 </section>
 
-<section id="cakes" class="section active" data-images="2.jpg,4.jpg,7.jpg,8.jpg,10.jpg,12.jpg,13.jpg,17.jpg,18.jpg,19.jpg,20.jpg,21.jpg,22.jpg,">
+<section id="cakes" class="section active"
+  data-images='["2.jpg","4.jpg","7.jpg,"8.jpg","10.jpg,","13.jpg,"17.jpg","18.jpg,"19.jpg","20.jpg,"21.jpg","22.jpg"]'
+  data-descs='["芒果流心慕斯搭配底層的抹茶蛋糕胚，不只配色清新，口味亦是。","純香濃苦的魔鬼巧克力蛋糕，層次分明、裱花與點綴相得益彰。利用75%以上的純可可，
+  與恰到好處的材料比例，唇齒留香之餘，更多的是心靈的慰藉。",
+  "芒芒百香提拉米蘇!突破傳統的口味，每每夏天的到來都讓我有新的動力，尋找更適配的創新靈感，應該沒人能拒絕水果味的甜點吧~,
+  "純香濃苦的魔鬼巧克力蛋糕，層次分明、裱花與點綴相得益彰。利用75%以上的純可可，與恰到好處的材料比例，唇齒留香之餘，更多的是心靈的慰藉。","]'>
   <h2>蛋糕類</h2>
   <div class="gallery"></div>
+  <div class="description-box"></div>
   <div class="pagination">
     <button class="arrow-btn prev">&#10094;</button>
     <button class="arrow-btn next">&#10095;</button>
   </div>
 </section>
-<section id="cookies" class="section" data-images="14.jpg,16.jpg,">
+
+  <section id="cookies" class="section"
+  data-images='["14.jpg","15.jpg","16.jpg"]'
+  data-descs='["芒果流心慕斯搭配底層的抹茶蛋糕胚，不只配色清新，口味亦是。","純香濃苦的魔鬼巧克力蛋糕，層次分明、裱花與點綴相得益彰。利用75%以上的純可可，
+  與恰到好處的材料比例，唇齒留香之餘，更多的是心靈的慰藉。",
+  "芒芒百香提拉米蘇!突破傳統的口味，每每夏天的到來都讓我有新的動力，尋找更適配的創新靈感，應該沒人能拒絕水果味的甜點吧~,
+  "純香濃苦的魔鬼巧克力蛋糕，層次分明、裱花與點綴相得益彰。利用75%以上的純可可，與恰到好處的材料比例，唇齒留香之餘，更多的是心靈的慰藉。","]'>
   <h2>餅乾類</h2>
   <div class="gallery"></div>
+  <div class="description-box"></div>
   <div class="pagination">
     <button class="arrow-btn prev">&#10094;</button>
     <button class="arrow-btn next">&#10095;</button>
   </div>
 </section>
-<section id="normal temperature" class="section" data-images="1.jpg,3.jpg,5.jpg,9.jpg,11.jpg,14.jpg,15.jpg,16.jpg,14.jpg">
+
+  <section id="normal temperature" class="section"
+  data-images='["1.jpg","3.jpg","5.jpg,"9.jpg","11.jpg,]'
+  data-descs='["芒果流心慕斯搭配底層的抹茶蛋糕胚，不只配色清新，口味亦是。","純香濃苦的魔鬼巧克力蛋糕，層次分明、裱花與點綴相得益彰。利用75%以上的純可可，
+  與恰到好處的材料比例，唇齒留香之餘，更多的是心靈的慰藉。",
+  "芒芒百香提拉米蘇!突破傳統的口味，每每夏天的到來都讓我有新的動力，尋找更適配的創新靈感，應該沒人能拒絕水果味的甜點吧~,
+  "純香濃苦的魔鬼巧克力蛋糕，層次分明、裱花與點綴相得益彰。利用75%以上的純可可，與恰到好處的材料比例，唇齒留香之餘，更多的是心靈的慰藉。","]'>
   <h2>常溫類</h2>
   <div class="gallery"></div>
+  <div class="description-box"></div>
   <div class="pagination">
     <button class="arrow-btn prev">&#10094;</button>
     <button class="arrow-btn next">&#10095;</button>
   </div>
 </section>
-<section id="bread" class="section" data-images="6.jpg,23.jpg,">
+
+  <section id="bread" class="section"
+  data-images='["23.jpg","6.jpg"]'
+  data-descs='["芒果流心慕斯搭配底層的抹茶蛋糕胚，不只配色清新，口味亦是。","純香濃苦的魔鬼巧克力蛋糕，層次分明、裱花與點綴相得益彰。利用75%以上的純可可，
+  與恰到好處的材料比例，唇齒留香之餘，更多的是心靈的慰藉。",
+  "芒芒百香提拉米蘇!突破傳統的口味，每每夏天的到來都讓我有新的動力，尋找更適配的創新靈感，應該沒人能拒絕水果味的甜點吧~,
+  "純香濃苦的魔鬼巧克力蛋糕，層次分明、裱花與點綴相得益彰。利用75%以上的純可可，與恰到好處的材料比例，唇齒留香之餘，更多的是心靈的慰藉。","]'>
   <h2>麵包類</h2>
   <div class="gallery"></div>
+  <div class="description-box"></div>
   <div class="pagination">
     <button class="arrow-btn prev">&#10094;</button>
     <button class="arrow-btn next">&#10095;</button>
   </div>
 </section>
-<section id="hot" class="section" data-images="25.jpg,26.jpg,27.jpg,28.jpg,29.jpg,30.jpg,31.jpg">
-  <h2>食指大動</h2>
+
+  <section id="hot" class="section"
+  data-images='["24.jpg","25.jpg","26.jpg,"27.jpg","28.jpg,"29.jpg","30.jpg,"31.jpg"]'
+  data-descs='["芒果流心慕斯搭配底層的抹茶蛋糕胚，不只配色清新，口味亦是。","純香濃苦的魔鬼巧克力蛋糕，層次分明、裱花與點綴相得益彰。利用75%以上的純可可，
+  與恰到好處的材料比例，唇齒留香之餘，更多的是心靈的慰藉。",
+  "芒芒百香提拉米蘇!突破傳統的口味，每每夏天的到來都讓我有新的動力，尋找更適配的創新靈感，應該沒人能拒絕水果味的甜點吧~,
+  "純香濃苦的魔鬼巧克力蛋糕，層次分明、裱花與點綴相得益彰。利用75%以上的純可可，與恰到好處的材料比例，唇齒留香之餘，更多的是心靈的慰藉。","]'>
+  <h2>食指大動類</h2>
   <div class="gallery"></div>
+  <div class="description-box"></div>
   <div class="pagination">
     <button class="arrow-btn prev">&#10094;</button>
     <button class="arrow-btn next">&#10095;</button>
   </div>
 </section>
+
+<!-- 其他 section 可仿照 cakes 加上 data-images 和 data-descs (用 JSON 格式字串) -->
 
 <script>
   const links = document.querySelectorAll('.nav-link');
   const sections = document.querySelectorAll('.section');
   let currentIndex = {};
+  let currentDescEl = null;
 
   links.forEach(link => {
     link.addEventListener('click', () => {
       links.forEach(l => l.classList.remove('active'));
       sections.forEach(sec => sec.classList.remove('active'));
-
       link.classList.add('active');
       const target = link.getAttribute('data-target');
       const section = document.getElementById(target);
@@ -226,13 +290,13 @@
     renderImages(section, 0);
 
     section.querySelector('.prev').addEventListener('click', () => {
-      const images = section.dataset.images.split(',');
+      const images = JSON.parse(section.dataset.images);
       currentIndex[id] = (currentIndex[id] - 1 + Math.ceil(images.length / 3)) % Math.ceil(images.length / 3);
       renderImages(section, currentIndex[id]);
     });
 
     section.querySelector('.next').addEventListener('click', () => {
-      const images = section.dataset.images.split(',');
+      const images = JSON.parse(section.dataset.images);
       currentIndex[id] = (currentIndex[id] + 1) % Math.ceil(images.length / 3);
       renderImages(section, currentIndex[id]);
     });
@@ -240,19 +304,36 @@
 
   function renderImages(section, index) {
     const gallery = section.querySelector('.gallery');
-    const images = section.dataset.images.split(',');
+    const descBox = section.querySelector('.description-box');
+    const images = JSON.parse(section.dataset.images);
+    const descs = JSON.parse(section.dataset.descs);
     gallery.innerHTML = '';
+    descBox.innerHTML = '';
+
     const pageImages = images.slice(index * 3, index * 3 + 3);
-    pageImages.forEach(src => {
+    const pageDescs = descs.slice(index * 3, index * 3 + 3);
+
+    pageImages.forEach((src, i) => {
+      const wrapper = document.createElement('div');
+      wrapper.classList.add('gallery-item');
       const img = document.createElement('img');
       img.src = src;
-      gallery.appendChild(img);
+      const descLink = document.createElement('div');
+      descLink.textContent = '點我';
+      descLink.classList.add('desc-link');
+      descLink.addEventListener('click', () => {
+        descBox.innerHTML = `<p>${pageDescs[i]}</p>`;
+      });
+      wrapper.appendChild(img);
+      wrapper.appendChild(descLink);
+      gallery.appendChild(wrapper);
     });
   }
 </script>
 
 </body>
 </html>
+
 
 
 
