@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
@@ -123,6 +123,8 @@
 
     .gallery img {
       width: 220px;
+      height: 220px;
+      object-fit: cover;
       border-radius: 10px;
       cursor: pointer;
       transition: transform 0.2s;
@@ -134,7 +136,7 @@
 
     .desc-link {
       display: inline-block;
-      margin-top: 10px;
+      margin-top: 0.5cm;
       color: #fff;
       text-decoration: underline;
       cursor: pointer;
@@ -173,7 +175,6 @@
       cursor: pointer;
     }
 
-    /* 放大圖片遮罩 */
     .lightbox {
       display: none;
       position: fixed;
@@ -216,7 +217,6 @@
   <p>感謝10年前的那個午後，如對接信號般的，決定嘗試親自闖闖烘焙這條路...</p>
 </section>
 
-<!-- 各分類 section 結構 -->
 <section id="cakes" class="section active"
   data-images='["2.jpg","4.jpg","7.jpg","8.jpg","10.jpg","13.jpg","17.jpg","18.jpg","19.jpg","20.jpg","21.jpg","22.jpg"]'
   data-descs='["蛋糕 1 描述","蛋糕 2 描述","蛋糕 3 描述","蛋糕 4 描述","蛋糕 5 描述","蛋糕 6 描述","蛋糕 7 描述","蛋糕 8 描述","蛋糕 9 描述","蛋糕 10 描述","蛋糕 11 描述","蛋糕 12 描述"]'>
@@ -348,7 +348,6 @@
     });
   }
 
-  // 點擊遮罩關閉放大圖
   document.getElementById('lightbox').addEventListener('click', () => {
     document.getElementById('lightbox').style.display = 'none';
   });
